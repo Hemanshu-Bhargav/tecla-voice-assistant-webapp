@@ -1,0 +1,51 @@
+<!-- Modify original record1.py, so that all recording processes take '# of seconds'
+as a command-line argument -->
+
+<!-- Extend Recording Time Button -->
+
+****************************************************************
+<form id="configuremicrophone" action="recordingpage1moretime.ejs" method="post">
+  <button onclick="reloadP()">Configure Microphone</button>
+	<p>Add seconds</p>
+	<input type="radio" id="addseconds1" value="1">
+	<label for="addseconds1">1</label>
+	<input type="radio" id="addseconds2" value="2">
+	<label for="addseconds2">2</label>
+	<input type="radio" id="addseconds3" value="3">
+	<input type="radio" id="addseconds3" value="3">
+
+  <div id="myProgress">
+    <div id="myBar"></div>
+  </div>
+  <div id="rechotword1"></div>
+*****************************************************************
+
+<select id="addseconds">
+    <option>Add 1 second</option>
+    <option>Add 2 second</option>
+    <option selected="selected">Add 3 seconds</option>
+    <option>Add 5 seconds</option>
+    <option>Add 10 seconds</option>
+</select>
+
+<script>
+var temp = "I need 5 seconds to record my voice command";
+var mySelect = document.getElementById('addseconds');
+
+for(var i, j = 0; i = mySelect.options[j]; j++) {
+    if(i.value == temp) {
+        mySelect.selectedIndex = j;
+        break;
+    }
+}
+</script>
+
+
+//index.js
+router.get('/recordingpage1moretime.ejs') (req,res) =>
+
+spawn('python3', "record1.py", pyarg1, secondstoadd);
+
+
+Sorry, I have another meeting and need to get ready for that. Great discussion everyone!
+See you all soon. Bye!

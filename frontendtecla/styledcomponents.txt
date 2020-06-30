@@ -1,0 +1,24 @@
+//Styled Components
+import styled from 'styled-components';
+
+//Sample styled component from tutorial //replace a with div, p, button etc
+//a used because we're replacing the learn react tag
+//Why is it still .a if the HTML tags below have been changed to LearnReact? Because
+//pre-existing CSS is present in App.css (I presume) and has been overridden
+//props: ternary condition, if props' color exists use it, otherwise set white
+const LearnReact = styled.a`
+  color:white;
+  font-size:36px;
+  color:${props => props.color ? props.color : "white"}
+`
+const Body = styled.div`
+  text-align:center;
+`
+//HTML tag used to be div className="App", replaced with Body
+//HTML tag below used to be 'a' not LearnReact. Again, styled component overrides pre-existing CSS. Lines below were also present:
+//          className="App-link"
+//          href="https://reactjs.org"
+//          target="_blank"
+//          rel="noopener noreferrer"
+/*color was added to test "props" ternary condition above
+// got rid of logo: <img src={logo} className="App-logo" alt="logo" /> etc

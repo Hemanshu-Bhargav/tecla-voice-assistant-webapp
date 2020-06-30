@@ -1,0 +1,21 @@
+<h1>Form Submitted!</h1>
+<p><%- JSON.stringify(storedhotword) %></p>
+<p><%- JSON.stringify(storedhotword.hotword) %></p>
+<p>Now, please proceed to the recording page:</p>
+<form class="navigaterecordingpage1" action="/recordingpage1" method="get">
+  <button>Recording Page</button>
+</form>
+<!-- Record Buttons (implemented as empty form). Redirect to same page. Use e.preventDefault()
+to prevent page reload -->
+<!-- Record Button for 1.wav
+<form action="?" method="post">
+    <button>Record1</button>
+</form> -->
+<!-- Record Button for 2.wav
+<form action="?" method="post">
+    <button>Record2</button>
+</form> -->
+<!-- Record Button for 3.wav
+<form action="?" method="post">
+    <button>Record3</button>
+</form> -->

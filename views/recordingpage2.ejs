@@ -1,0 +1,123 @@
+<!-- Styling for progress bar. Move to CSS in public -->
+<style>
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+#myBar {
+  width: 1%;
+  height: 30px;
+  background-color: #4CAF50;
+}
+</style>
+
+<!-- Record Button implemented as empty form. Page refresh is disables using event.preventDefault below -->
+<p>To record a sample of your hotword, please click "Configure Microphone" and once the page has reloaded, click "Record 1st Sample"</p>
+<form id="configuremicrophone" action="?" method="post">
+  <button onclick="reloadP()">Configure Microphone</button>
+  <div id="myProgress">
+    <div id="myBar"></div>
+  </div>
+  <div id="rechotword1"></div>
+    <!-- add in EJS tags:  // JSON.stringify(msgalert) --> <!-- <p>Test if p tag works in forms</p> -->
+</form>
+<!-- form action="?" id="record1" method="post">
+  <button onclick="move()">Record 1st Sample</button>
+  <div id="myProgress">
+    <div id="myBar"></div>
+  </div>
+
+</form> -->
+
+<!-- Add "Recording Successful!" to page reload. Empty form submission no longer prevents page refresh (note: didn't use jQuery), but rather
+causes refresh as this is necessary to trigger server-side functions. Therefore, button click causes recording to initiate, and on reload progress bar activates (not on first load)  -->
+<script>
+  /* Read sessionStorage to trigger recording on first click of button and trigger progress
+  bar animation on second click */
+  window.onload = function() {
+    var reloading = sessionStorage.getItem("reloading");
+    if (reloading) {
+        sessionStorage.removeItem("reloading");
+        move();
+    }
+}
+
+function reloadP() {
+    sessionStorage.setItem("reloading", "true");
+    document.location.reload();
+}
+
+  //Launch recording first, extend recording time beyond 5 seconds to accomodate delay
+  //Prior idea was to search terminal output which is appended to node.js, however, delay in searching
+  //live output would result in a mistimed recording as well, so a seperate and disconnected front-end seems
+  //to be the workable solution
+  var i = 0;
+  function move() {
+    if (i == 0) {
+      i = 1;
+      var elem = document.getElementById("myBar");
+      var width = 1;
+      var id = setInterval(frame, 50); //5 seconds in milliseconds Actual recording file is 7 seconds to accomodate delay
+      function frame() {
+        if (width >= 100) {
+          clearInterval(id);
+          i = 0;
+        } else {
+          width++;
+          elem.style.width = width + "%";
+        }
+      }
+    }
+    function handleForm(event)
+      {
+        event.preventDefault();
+        /* Add recording success message on form submit */
+        //Sleep 8 seconds to ensure recording has completed
+        var theDiv = document.getElementById("rechotword1");
+        setTimeout(function()
+        {
+          var content = document.createTextNode("Recording Successful!");
+          theDiv.appendChild(content);
+        },
+        (5500)); //5.5 seconds or 5500 milliseconds
+      }
+    var form1 = document.getElementById("configuremicrophone");
+    form1.addEventListener('submit', handleForm);
+  }
+</script>
+
+<!-- Navigate to next page (to record sample# 3/3) -->
+<div>
+  <form class="navigaterecordingpage3" action="recordingpage3">
+    <button>Next</button>
+  </form>
+</div>
+
+<!--
+<div class="record1div">
+  <button onclick="func()" type="submit" class="record1">Record 1st Sample</button>
+</div>
+<div class="figmabluebox">
+  <button onclick="func()" type="submit" class="record2">Record 2nd Sample</button>
+</div>
+<div class="figmabluebox">
+  <button onclick="func()" type="submit" class="record3">Record 3rd Sample</button>
+  <button class="btn btn-success" onclick="func()" type="submit" >Install</button>
+  <!-- Client Side Ajax Script
+  <script>
+      $('button').click(function () {
+          $.post('/index', {data: 'blah'}, function (data) {
+          console.log(data);
+        });
+      }, 'json');
+  </script>
+</div>
+-->
+<!-- new button test
+<script>
+  const func = () => fetch('http://localhost:3000/recordingpage'); //now connect to this page
+</script>
+<!-- for io() function of socket.io to work
+<script src="/socket.io/socket.io.js"></script>
+<!-- here we can access the io method of socket.io seen in server.js
+<script src="./routes/index.js"></script> -->
