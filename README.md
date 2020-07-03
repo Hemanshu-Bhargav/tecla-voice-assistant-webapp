@@ -1,5 +1,5 @@
 # tecla-voice-assistant-webapp
-Node.js Webapp which spawns Python processes to automate training process of Snowboy Wake Word Engine
+Node.js web app, which spawns Python processes, to automate and enhance the training process of Snowboy's Wake Word Engine.
 
 Web service which allows users to create customized wake words using Snowboy found [here](https://github.com/Kitt-AI/snowboy).
 Wake words are phrases which "wake up" the voice assistant, such as "Ok Google".
