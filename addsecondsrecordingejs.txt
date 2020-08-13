@@ -45,7 +45,3 @@ for(var i, j = 0; i = mySelect.options[j]; j++) {
 router.get('/recordingpage1moretime.ejs') (req,res) =>
 
 spawn('python3', "record1.py", pyarg1, secondstoadd);
-
-
-Sorry, I have another meeting and need to get ready for that. Great discussion everyone!
-See you all soon. Bye!
