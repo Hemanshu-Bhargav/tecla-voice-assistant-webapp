@@ -10,5 +10,8 @@ To run: create an entry point for your folder using ```npm init``` and then run 
 
 Hardware/Software requirements:
 - Linux Distribution or MacOS supported by Snowboy
+- Raspberry Pi
+- Snowboy (download [here](https://github.com/Kitt-AI/snowboy))
+- Nodejs 
 - Microphone capable of recording at frequncies of 16hz (most USB microphones will work)
 - Port 3000 should not be preoccupied
