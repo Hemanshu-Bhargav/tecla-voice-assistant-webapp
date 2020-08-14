@@ -1,4 +1,4 @@
-<h2>Register an Action</h2>
+
 <!--
 <form id="myForm" action = "/submitform" method="post">
   <input id="textInput" type="text"></input>
@@ -7,45 +7,95 @@
   -->
   <!-- Python Command-line arugments -->
   <form action="/submitform" method="POST">
-    <div class="figmabluebox">
-      <!--
-      <label for="endcall">End Call</label><br>
-      <input type="text"</input>
-      <label for="hangup">Hang Up</label><br>
-      <input type="radio" id="gain" name="gain" value="2">
-      <label for="disconnectcall">Disconnect Call</label><br>
-      -->
-      <p>Alternatively, choose your own name.</p>
-      <label for="hotword">Please type in the phrase you would like Tecla to respond to:</label><br>
-      <input
-        type="text"
-        id="hotword"
-        name="hotword"
-        class="form-control"
-        placeholder="Custom Phrase"
-      </input>
-    </div>
-    <!-- "Voice Type" (stand-in for gender) Should be a radio button -->
-    <div class="figmabluebox">
-      <p>Voice Type</p>
-      <input type="radio" id="voicetype" name="voicetype" value="F">
-      <label for="voicetype">I speak softly</label><br>
-      <input type="radio" id="voicetype" name="voicetype" value="F">
-      <label for="voicetype">I'm somewhere in between</label><br>
-      <input type="radio" id="voicetype" name="voicetype" value="M">
-      <label for="voicetype">I speak loudly</label><br>
-    </div>
-    <!-- Gain should be a radio button -->
-    <div class="figmabluebox">
-      <p>Microphone Volume</p>
-      <input type="radio" id="gain" name="gain" value="0">
-      <label for="gain">I speak softly</label><br>
-      <input type="radio" id="gain" name="gain" value="1">
-      <label for="gain">I'm somewhere in between</label><br>
-      <input type="radio" id="gain" name="gain" value="2">
-      <label for="gain">I speak loudly</label><br>
-    </div>
-    <button onclick="func()" type="submit" class="btn btn-primary btn-block">Create My Custom Phrase</button>
+
+      <section class="figmabluebox">
+        <h2>Register an Action</h2>
+        <p>Any of the voice commands below can be used to end a phone call using Tecla Voice Assistant. Please choose one:</p>
+        <input type="radio" id="endcall" name="endcall">
+        <label for="endcall">End Call</label><br>
+        <input type="radio" id="hangup" name="hangup">
+        <label for="hangup">Hang Up</label><br>
+        <input type="radio" id="disconnectcall" name="disconnectcall">
+        <label for="disconnectcall">Disconnect Call</label><br>
+
+        <article>
+          <!-- Google Material Design Text Icon. Icon name is between brackets. Referenced from layout.ejs -->
+          <i class="material-icons">text_fields</i>
+          <label for="hotword">Alternatively, please type in the phrase you would like Tecla to respond to:</label><br>
+        </article>
+        <input
+          type="text"
+          id="hotword"
+          name="hotword"
+          class="form-control"
+          placeholder="Custom Phrase"
+        </input>
+      </section>
+
+      <!-- Age -->
+      <section class="figmabluebox">
+        <article>
+          <!-- Google Material Design Code icon -->
+          <i class="material-icons">language</i>
+          How old are you?
+        </article>
+        <input
+          type="text"
+          id="age"
+          name="age"
+          class="form-control"
+          placeholder="Please enter a whole number, such as 25"
+        </input>
+      </section>
+
+      <!-- Language -->
+      <section class="figmabluebox">
+
+        <article>
+          <!-- Google Material Design Code icon for age. NEED TO ROTATE 90 DEGREES -->
+          <i class="material-icons">code</i>
+          Which language will your voice command be in?
+        </article>
+
+        <input type="radio" id="language" name="language" value="en">
+        <label for="language">English</label>
+      </section>
+
+      <!-- "Voice Type" (stand-in for gender) Should be a radio button -->
+      <section class="figmabluebox">
+
+        <article>
+          <!-- Google Material Design Code icon -->
+          <i class="material-icons">surround_sound</i>
+          Voice Type
+        </article>
+
+        <input type="radio" id="voicetype" name="voicetype" value="F">
+        <label for="voicetype">I speak softly</label><br>
+        <input type="radio" id="voicetype" name="voicetype" value="F">
+        <label for="voicetype">I'm somewhere in between</label><br>
+        <input type="radio" id="voicetype" name="voicetype" value="M">
+        <label for="voicetype">I speak loudly</label><br>
+
+      </section>
+
+      <!-- Gain should be a radio button -->
+      <section class="figmabluebox">
+
+        <article>
+          <!-- Google Material Design Icon for microphone -->
+          <i class="material-icons">mic</i>
+          Microphone Volume
+        </article>
+
+        <input type="radio" id="gain" name="gain" value="0">
+        <label for="gain">I speak softly</label><br>
+        <input type="radio" id="gain" name="gain" value="1">
+        <label for="gain">I'm somewhere in between</label><br>
+        <input type="radio" id="gain" name="gain" value="2">
+        <label for="gain">I speak loudly</label><br>
+      </section>
+      <button onclick="func()" type="submit" class="btn btn-primary btn-block">Create My Custom Phrase</button>
   </form>
   <!-- new button test -->
   <script>

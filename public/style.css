@@ -24,8 +24,28 @@ a {
 	text-decoration: none;
 }
 */
+html {
+ height: 100%;
+}
+
+.container {
+margin: 0;
+padding: 0;
+width: 100%;
+display: flex;
+flex-flow: row wrap;
+}
+/*
+.container section {
+box-sizing: border-box;
+min-height: 150px;
+min-width: 150px;
+text-align : center; padding: 2%;
+}
+
+/* .container article { text-align : center; padding: 2%;} */
 /* Media Queries (customize beyond Bootstrap)
-@media (max-width: 700px) {
+@media (max-width: devicew-) {
 }
 */
 /*Actual App */
@@ -54,10 +74,15 @@ a {
 	left: 0px;
 	top: 597px;
 	*/
-	padding: 5px 15px;
+	padding: 1% 5%;
 	background: #FFFFFF;
 	border: 1px solid #009EE2;
 	box-sizing: border-box;
+}
+.headerbluebox{
+		background: #FFFFFF;
+		border: 1px solid #009EE2;
+		box-sizing: border-box;
 }
 ul {
   list-style-type: none;
