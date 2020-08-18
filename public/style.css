@@ -26,14 +26,58 @@ a {
 */
 html {
  height: 100%;
+ width: 100%;
 }
 
-.container {
-margin: 0;
-padding: 0;
-width: 100%;
-display: flex;
-flex-flow: row wrap;
+/*
+section {
+  width: 100vh;
+}
+article {
+  width: 100vh;
+}
+*/
+/*
+@media screen and (min-width: 600px) {
+  .container{
+    width: 100vw;
+  }
+  .figmabluebox {
+    width: 100vw;
+  }
+  .headerbluebox{
+    width: 100vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+*/
+@media screen and (min-width: 240px)
+{
+  .container
+  {
+    width: 98.5vw;
+  /*  margin-left: 1vw;
+    margin-right: 1vw; */
+    margin-left: 0.25vw;
+    margin-right: 0.25vw;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .figmabluebox
+  {
+    width: 98.5vw;
+
+  }
+
+  .headerbluebox
+  {
+    width: 98.5vw;
+    margin-left: 0.25vw;
+    margin-right: 0.25vw;
+  }
 }
 /*
 .container section {
@@ -44,27 +88,30 @@ text-align : center; padding: 2%;
 }
 
 /* .container article { text-align : center; padding: 2%;} */
-/* Media Queries (customize beyond Bootstrap)
-@media (max-width: devicew-) {
-}
-*/
+
 /*Actual App */
 .button.myfigmabutton{
 /* Was in figma but REMOVED	position: absolute; */
 	background-color: #009EE2;
 	color: white;
 	border: none;
-	width: 112px;
+/*	width: 112px;
 	height: 56px;
 	left: 150px;
 	top: 472px;
-	padding: 10px 25px;
+/*	padding: 10px 25px; */
 	cursor: pointer;
 	border: 0;
 	font-size: 16px;
 	display: inline-block;
 	/* 2dp — Elevation */
 	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14);
+}
+
+.btn-primary{
+  width: inherit;
+  padding: inherit;
+  margin: inherit;
 }
 .figmabluebox{
 	/* Rectangle 43
@@ -74,7 +121,7 @@ text-align : center; padding: 2%;
 	left: 0px;
 	top: 597px;
 	*/
-	padding: 1% 5%;
+/*	padding: 1% 5%; */
 	background: #FFFFFF;
 	border: 1px solid #009EE2;
 	box-sizing: border-box;
@@ -98,7 +145,7 @@ ul {
 li a {
   display: block;
   color: #000;
-  padding: 8px 16px;
+/*  padding: 8px 16px; */
 	width: inherit;
 	height: 56px;
 	left: 250px;
