@@ -32,7 +32,7 @@ def record_and_train(storedhotword, paramgender, wakewordmodelname):
 
     endpoint = "https://snowboy.kitt.ai/api/v1/train/"
 
-    token = "c900a4a0c9b825f02f13f2d7116980b5b815d22c"
+    token = "REMOVED FOR SECURITY"
     hotword_name = str(storedhotword)
     language = "en"
     age_group = "20_29"
