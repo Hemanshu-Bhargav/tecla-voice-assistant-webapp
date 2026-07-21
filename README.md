@@ -15,3 +15,5 @@ Hardware/Software requirements:
 - Nodejs 
 - Microphone capable of recording at frequncies of 16hz (most USB microphones will work)
 - Port 3000 should not be preoccupied
+
+This project used messaging queue tools to exchange data between a desktop computer or mobile phone and a raspberry pir. That functionality is not present in this repository.
